@@ -1353,6 +1353,8 @@ install(TARGETS ${Launcher_Name}
     FRAMEWORK DESTINATION ${FRAMEWORK_DEST_DIR} COMPONENT Runtime
 )
 
+install(FILES $<TARGET_PDB_FILE:${Launcher_Name}> DESTINATION "." OPTIONAL)
+
 if(Launcher_BUILD_UPDATER)
     # Updater
     add_library(prism_updater_logic STATIC ${PRISMUPDATER_SOURCES} ${TASKS_SOURCES} ${PRISMUPDATER_UI})
